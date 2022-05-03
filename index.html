@@ -1,92 +1,158 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Overwatch Characters</title>
+		<link href="./css/style.css" type="text/css" rel="stylesheet" />
+		<link href="./css/character.css" type="text/css" rel="stylesheet" />
+	</head>
+	<header>
+		<a href="./index.html"
+			><img src="./photos/586273b931349e0568ad89df.png" width="50px" class="menu-logo"
+		/></a>
+		<nav>
+			<ul>
+				<a href="#tank">
+					<li class="navbar">Tank</li>
+				</a>
+				<a href="#damage">
+					<li class="navbar">Damage</li>
+				</a>
+				<a href="#support">
+					<li class="navbar">Support</li>
+				</a>
+				<a href="#other">
+					<li class="navbar">Other</li>
+				</a>
+			</ul>
+		</nav>
+	</header>
 
-<head>
-    <title>Overwatch Characters</title>
-    <link href="./css/index.css" type="text/css" rel="stylesheet" />
-</head>
-<header>
-    <a href="./index.html"><img src="./photos/586273b931349e0568ad89df.png" width="50px" class="menu-logo"></a>
-    <nav>
-        <ul>
-            <a href="#tanks">
-                <li class="navbar">Tank</li>
-            </a>
-            <a href="#damage">
-                <li class="navbar">Damage</li>
-            </a>
-            <a href="#support">
-                <li class="navbar">Support</li>
-            </a>
-            <a href="#other">
-                <li class="navbar">Other</li>
-            </a>
-        </ul>
-    </nav>
-</header>
-
-<body>
-    <div class="pagetitle">
-        <h1 class="titlebanner">Overwatch Characters</h1>
-        <hr class="titlebannerimage">
-        <hr class="divider">
-    </div>
-    <div class="mainbody">
-        <div class="tanks" id="tanks">
-            <h2 class="tank-title">Tank</h2>
-            <hr class="tankbannerimage">
-            <hr class="divider">
-            <ul class="herolist-tank">
-                <li>D. Va - </li>
-                <li>Orisa - <a href="./character-index/orisa.html">More Info</a></li>
-                <li>Reinhardt - </li>
-                <li>Roadhog - </li>
-                <li>Sigma - </li>
-                <li>Winston - </li>
-                <li>Wrecking Ball - </li>
-                <li>Zarya - </li>
-            </ul>
-        </div>
-        <div class="damage" id="damage">
-            <h2 class="damage-title">Damage</h2>
-            <hr class="damagebannerimage">
-            <hr class="divider">
-            <ul class="herolist-dps">
-                <li>Ashe - </li>
-                <li>Bastion - </li>
-                <li>Cassidy - </li>
-                <li>Doomfist - </li>
-                <li>Echo - </li>
-                <li>Genji - </li>
-                <li>Hanzo - </li>
-                <li>Junkrat - </li>
-                <li>Mei - <a href="./character-index/mei.html">More Info</a></li>
-                <li>Pharah - </li>
-                <li>Reaper - </li>
-                <li>Soldier 76 - </li>
-                <li>Sombra - </li>
-                <li>Symmetra - </li>
-                <li>Torbjorn - </li>
-                <li>Tracer - </li>
-                <li>Widowmaker - </li>
-            </ul>
-        </div>
-        <div class="support" id="support">
-            <h2 class="support-title">Support</h2>
-            <hr class="supportbannerimage">
-            <hr class="divider">
-            <ul class="herolist-support">
-                <li>Ana - </li>
-                <li>Baptiste - </li>
-                <li>Brigitte - </li>
-                <li>Lucio - </li>
-                <li>Mercy - <a href="./character-index/mercy.html">More Info</a></li>
-                <li>Moira - </li>
-                <li>Zenyatta - </li>
-            </ul>
-        </div>
-    </div>
-
-</body>
-
+	<body>
+		<div class="pagetitle">
+			<div class="overlay"></div>
+			<h1 class="titlebanner">Overwatch Characters</h1>
+			<hr class="titlebannerimage" />
+		</div>
+		<div class="mainbody">
+			<div class="tank" id="tanks">
+				<div class="tank-overlay"></div>
+				<h2 class="tank-title">Tanks</h2>
+				<div class="information-tank"></div>
+				<div class="herolist tanklist">
+					<div class="d_va character">
+						<p>D. Va</p>
+					</div>
+					<div class="orisa character">
+						<p>Orisa</p>
+					</div>
+					<div class="reinhardt character">
+						<p>Reinhardt</p>
+					</div>
+					<div class="roadhog character">
+						<p>Roadhog</p>
+					</div>
+					<div class="sigma character">
+						<p>Sigma</p>
+					</div>
+					<div class="winston character">
+						<p>Winston</p>
+					</div>
+					<div class="wrecking_ball character">
+						<p>Wrecking Ball</p>
+					</div>
+					<div class="zarya character">
+						<p>Zarya</p>
+					</div>
+				</div>
+			</div>
+			<div class="damage" id="damage">
+				<div class="damage-overlay"></div>
+				<h2 class="damage-title">Damage</h2>
+				<div class="information-damage"></div>
+				<div class="herolist damagelist">
+					<div class="ashe character">
+						<p>Ashe</p>
+					</div>
+					<div class="bastion character">
+						<p>Bastion</p>
+					</div>
+					<div class="cassidy character">
+						<p>Cassidy</p>
+					</div>
+					<div class="doomfist character">
+						<p>Doomfist</p>
+					</div>
+					<div class="echo character">
+						<p>Echo</p>
+					</div>
+					<div class="genji character">
+						<p>Genji</p>
+					</div>
+					<div class="hanzo character">
+						<p>Hanzo</p>
+					</div>
+					<div class="junkrat character">
+						<p>Junkrat</p>
+					</div>
+					<div class="mei character">
+						<p>Mei</p>
+					</div>
+					<div class="pharah character">
+						<p>Pharah</p>
+					</div>
+					<div class="reaper character">
+						<p>Reaper</p>
+					</div>
+					<div class="soldier_76 character">
+						<p>Soldier 76</p>
+					</div>
+					<div class="sombra character">
+						<p>Sombra</p>
+					</div>
+					<div class="symmetra character">
+						<p>Symmetra</p>
+					</div>
+					<div class="torbjorn character">
+						<p>Torbjorn</p>
+					</div>
+					<div class="tracer character">
+						<p>Tracer</p>
+					</div>
+					<div class="widowmaker character">
+						<p>Widowmaker</p>
+					</div>
+				</div>
+			</div>
+			<div class="support" id="support">
+				<div class="support-overlay"></div>
+				<h2 class="support-title">Support</h2>
+				<div class="information-support"></div>
+				<div class="herolist supportlist">
+					<div class="ana character">
+						<p>Ana</p>
+					</div>
+					<div class="baptiste character">
+						<p>Baptiste</p>
+					</div>
+					<div class="brigitte character">
+						<p>Brigitte</p>
+					</div>
+					<div class="lucio character">
+						<p>Lucio</p>
+					</div>
+					<div class="mercy character">
+						<p>Mercy</p>
+					</div>
+					<div class="moira character">
+						<p>Moira</p>
+					</div>
+					<div class="zenyatta character">
+						<p>Zenyatta</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="module" src="./script.js"></script>
+	<script type="module" src="./character.js"></script>
 </html>
