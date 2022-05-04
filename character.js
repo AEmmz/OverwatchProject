@@ -268,37 +268,6 @@ supportSection.addEventListener('mouseleave', () => {
 });
 
 //Random Character Image
-const tankArr = [
-	'D.Va',
-	'Orisa',
-	'Reinhardt',
-	'Roadhog',
-	'Sigma',
-	'Winston',
-	'Wrecking Ball',
-	'Zarya',
-];
-const damageArr = [
-	'Ashe',
-	'Bastion',
-	'Cassidy',
-	'Doomfist',
-	'Echo',
-	'Genji',
-	'Hanzo',
-	'Junkrat',
-	'Mei',
-	'Pharah',
-	'Reaper',
-	'Soldier 76',
-	'Sombra',
-	'Symmetra',
-	'Torbjorn',
-	'Tracer',
-	'Widowmaker',
-];
-const supportArr = ['Ana', 'Baptiste', 'Brigitte', 'Lucio', 'Mercy', 'Moira', 'Zenyatta'];
-
 const randomPic = (arr, role) => {
 	const randomNum = Math.floor(Math.random() * arr.length);
 	const roles = document.querySelector(`.${role}`);
@@ -308,6 +277,10 @@ const randomPic = (arr, role) => {
 	roles.style.backgroundSize = 'cover';
 	roles.style.backgroundPosition = '50% 20%';
 };
+
+const tankArr = [...document.querySelectorAll('.tankchar')].map((e) => e.innerHTML);
+const damageArr = [...document.querySelectorAll('.damagechar')].map((e) => e.innerHTML);
+const supportArr = [...document.querySelectorAll('.supportchar')].map((e) => e.innerHTML);
 
 randomPic(tankArr, 'tank');
 randomPic(damageArr, 'damage');
