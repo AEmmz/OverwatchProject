@@ -1,0 +1,218 @@
+:root {
+  --ow-orange: #fa9c1d;
+  --ow-grey: #4a4c4e;
+  --ow-white: #fff;
+  --ow-greyRGB: 74, 76, 78;
+  --ow-orangeRGB: 250, 156, 29;
+  --ow-whiteRGB: 255, 255, 255;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@font-face {
+  font-family: OWFont;
+  src: url("BITSUMIS.e118e60b.TTF");
+}
+
+header {
+  width: 100%;
+  background-color: var(--ow-white);
+  z-index: 10;
+  flex-flow: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: OWFont, sans-serif;
+  display: flex;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 0 25px;
+}
+
+.navbar {
+  padding: 40px;
+  font-size: 25px;
+  font-weight: 500;
+  display: inline-flex;
+}
+
+header ul a:hover {
+  color: var(--ow-white);
+  background-color: var(--ow-orange);
+  display: inline-flex;
+}
+
+header ul a li {
+  color: var(--ow-grey);
+  display: flex;
+}
+
+header ul a li:hover {
+  color: var(--ow-white);
+}
+
+nav {
+  display: inline-block;
+}
+
+header a:link, header a:visited, header a:hover, header a:active {
+  text-decoration: none;
+}
+
+body {
+  height: 1200px;
+  grid-template-rows: 1fr 2fr;
+  display: grid;
+  position: relative;
+  top: 100px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #4a4d4fcc;
+  display: block;
+  position: absolute;
+}
+
+.tank-overlay, .damage-overlay, .support-overlay {
+  background-color: var(--ow-grey);
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  transition: opacity 1.5s;
+  display: block;
+  position: absolute;
+}
+
+.pagetitle {
+  vertical-align: middle;
+  height: 100%;
+  text-align: center;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  font-family: OWFont, sans-serif;
+  display: grid;
+  position: relative;
+}
+
+.pagetitle:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  opacity: .8;
+  background: url("overwatch-banner.5c9ba654.jpg") 50% 20% / cover no-repeat;
+  display: block;
+  position: absolute;
+}
+
+.pagetitle .titlebanner {
+  text-shadow: 1px 0 15px #000;
+  z-index: 1;
+  color: var(--ow-white);
+  font-size: 120px;
+  display: block;
+  position: relative;
+}
+
+.mainbody {
+  height: 100%;
+  background-color: var(--ow-grey);
+  grid-template-rows: 1fr 1fr 1fr;
+  font-family: OWFont, sans-serif;
+  font-weight: 900;
+  display: block;
+  position: relative;
+}
+
+.tank, .damage, .support {
+  height: 100%;
+  border-bottom: 20px solid var(--ow-orange);
+  box-shadow: inset 0px 0px 40px 2px var(--ow-grey);
+  grid-template-rows: 1fr;
+  align-items: center;
+  transition: box-shadow .5s ease-in-out, background 5s;
+  display: grid;
+  position: relative;
+}
+
+.tank {
+  border-top: 20px solid var(--ow-orange);
+}
+
+.damage {
+  background-position: 50% 30%;
+  justify-content: right;
+}
+
+.support {
+  background-position: 50% 20%;
+}
+
+.tank-title {
+  text-shadow: 1px 0 15px #000;
+  opacity: 1;
+  color: var(--ow-white);
+  font-size: 80px;
+  transition: opacity .5s;
+  display: block;
+  position: relative;
+  left: 180px;
+}
+
+.damage-title {
+  text-shadow: 1px 0 15px #000;
+  z-index: 1;
+  color: #fff;
+  font-size: 80px;
+  transition: opacity .5s;
+  display: block;
+  position: relative;
+  left: -180px;
+}
+
+.support-title {
+  text-shadow: 1px 0 15px #000;
+  z-index: 1;
+  color: #fff;
+  font-size: 80px;
+  transition: opacity .5s;
+  display: block;
+  position: relative;
+  left: 180px;
+}
+
+.herolist {
+  width: 100%;
+  height: 80%;
+  text-align: center;
+  color: var(--ow-white);
+  opacity: 0;
+  text-shadow: 1px 0 15px #000;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 40px;
+  list-style: none;
+  transition: opacity 1.5s;
+  display: grid;
+  position: absolute;
+}
+
+.herolist div :hover {
+  cursor: pointer;
+}
+
+.tanklist, .supportlist {
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.damagelist {
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/*# sourceMappingURL=index.b2625c6b.css.map */

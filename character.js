@@ -1,5 +1,15 @@
 'use strict';
 
+//ConstantVars
+
+const tankSection = document.querySelector('.tank');
+const damageSection = document.querySelector('.damage');
+const supportSection = document.querySelector('.support');
+let timer;
+let timer2;
+
+///////////Character Profiles
+
 class Character {
 	constructor(name, alias, age, nationality, ultimate) {
 		this.name = name;
@@ -15,14 +25,6 @@ class Character {
 		);
 	}
 }
-
-//ConstantVars
-const tankSection = document.querySelector('.tank');
-const damageSection = document.querySelector('.damage');
-const supportSection = document.querySelector('.support');
-let timer;
-let timer2;
-
 //Tanks
 const dVA = new Character('Hana Song', 'D.Va', 19, 'Korean', 'Self Destruct');
 const orisa = new Character('Orisa', 'Orisa', '1 mo', 'Numbanian', 'Supercharger');
@@ -32,7 +34,6 @@ const sigma = new Character('Siebren de Kuiper', 'Sigma', 62, 'Dutch', 'Gravitic
 const winston = new Character('Winston', 'Winston', 29, 'Gorilla', 'Primal Rage');
 const wreckingBall = new Character('Hammond', 'Wrecking Ball', '14 mo', 'Hamster', 'Minefield');
 const zarya = new Character('Aleksandra Zaryanova', 'Zarya', 28, 'Russian', 'Graviton Surge');
-
 //Damage
 const ashe = new Character('Elizabeth Caledonia Ashe', 'Ashe', 39, 'American', 'B.O.B.');
 const bastion = new Character(
@@ -69,7 +70,6 @@ const symmetra = new Character('Satya Vaswani', 'Symmetra', 28, 'Indian', 'Photo
 const torbjorn = new Character('Torbjörn Lindholm', 'Torbjorn', 57, 'Swedish', 'Molten Core');
 const tracer = new Character('Lena Oxton', 'Tracer', 26, 'British', 'Pulse Bomb');
 const widowmaker = new Character('Amélie Lacroix', 'Widowmaker', 33, 'French', 'Infra-Sight');
-
 //Support
 const ana = new Character('Ana Amari', 'Ana', 60, 'Egyptian', 'Nano Boost');
 const baptiste = new Character(
@@ -84,6 +84,8 @@ const lucio = new Character('Lúcio Correia dos Santos', 'Lucio', 26, 'Brazilian
 const mercy = new Character('Angela Ziegler', 'Mercy', 37, 'Swiss', 'Valkyrie');
 const moira = new Character(`Moira O'Deorain`, 'Moira', 48, 'Irish', 'Coalescence');
 const zenyatta = new Character('Tekhartha Zenyatta', 'Zenyatta', 20, 'Omnic', 'Transcendence');
+
+//-----------Character Section Interactions
 
 const onLeaveChar = (role) => {
 	const roleList = document.querySelector(`.${role}list`);
@@ -156,118 +158,52 @@ const onClick = (obj, role) => {
 		onLeaveClose(`${role}`);
 	});
 };
-//Tanks
-dVA.listener().addEventListener('click', () => {
-	onClick(dVA, 'tank');
-});
-orisa.listener().addEventListener('click', () => {
-	onClick(orisa, 'tank');
-});
-reinhardt.listener().addEventListener('click', () => {
-	onClick(reinhardt, 'tank');
-});
-roadhog.listener().addEventListener('click', () => {
-	onClick(roadhog, 'tank');
-});
-sigma.listener().addEventListener('click', () => {
-	onClick(sigma, 'tank');
-});
-winston.listener().addEventListener('click', () => {
-	onClick(winston, 'tank');
-});
-wreckingBall.listener().addEventListener('click', () => {
-	onClick(wreckingBall, 'tank');
-});
-zarya.listener().addEventListener('click', () => {
-	onClick(zarya, 'tank');
-});
+
+//--------- Character List
+
+const tankList = [dVA, orisa, reinhardt, roadhog, sigma, winston, wreckingBall, zarya];
+const supportList = [ana, baptiste, brigitte, lucio, mercy, moira, zenyatta];
+const damageList = [
+	ashe,
+	bastion,
+	cassidy,
+	doomfist,
+	echo,
+	genji,
+	hanzo,
+	junkrat,
+	mei,
+	pharah,
+	reaper,
+	soldier76,
+	sombra,
+	symmetra,
+	torbjorn,
+	tracer,
+	widowmaker,
+];
+
+//----------Event Handlers for Name Clicks
+
+const clickEvent = (char, type) => {
+	char.listener().addEventListener('click', () => onClick(char, type));
+};
+tankList.forEach((char) => clickEvent(char, 'tank'));
+damageList.forEach((char) => clickEvent(char, 'damage'));
+supportList.forEach((char) => clickEvent(char, 'support'));
+
 tankSection.addEventListener('mouseleave', () => {
 	onLeaveSection('tank');
 });
-
-//Damage
-ashe.listener().addEventListener('click', () => {
-	onClick(ashe, 'damage');
-});
-bastion.listener().addEventListener('click', () => {
-	onClick(bastion, 'damage');
-});
-cassidy.listener().addEventListener('click', () => {
-	onClick(cassidy, 'damage');
-});
-doomfist.listener().addEventListener('click', () => {
-	onClick(doomfist, 'damage');
-});
-echo.listener().addEventListener('click', () => {
-	onClick(echo, 'damage');
-});
-genji.listener().addEventListener('click', () => {
-	onClick(genji, 'damage');
-});
-hanzo.listener().addEventListener('click', () => {
-	onClick(hanzo, 'damage');
-});
-junkrat.listener().addEventListener('click', () => {
-	onClick(junkrat, 'damage');
-});
-mei.listener().addEventListener('click', () => {
-	onClick(mei, 'damage');
-});
-pharah.listener().addEventListener('click', () => {
-	onClick(pharah, 'damage');
-});
-reaper.listener().addEventListener('click', () => {
-	onClick(reaper, 'damage');
-});
-soldier76.listener().addEventListener('click', () => {
-	onClick(soldier76, 'damage');
-});
-sombra.listener().addEventListener('click', () => {
-	onClick(sombra, 'damage');
-});
-symmetra.listener().addEventListener('click', () => {
-	onClick(symmetra, 'damage');
-});
-torbjorn.listener().addEventListener('click', () => {
-	onClick(torbjorn, 'damage');
-});
-tracer.listener().addEventListener('click', () => {
-	onClick(tracer, 'damage');
-});
-widowmaker.listener().addEventListener('click', () => {
-	onClick(widowmaker, 'damage');
-});
 damageSection.addEventListener('mouseleave', () => {
 	onLeaveSection('damage');
-});
-
-//Support;
-ana.listener().addEventListener('click', () => {
-	onClick(ana, 'support');
-});
-baptiste.listener().addEventListener('click', () => {
-	onClick(baptiste, 'support');
-});
-brigitte.listener().addEventListener('click', () => {
-	onClick(brigitte, 'support');
-});
-lucio.listener().addEventListener('click', () => {
-	onClick(lucio, 'support');
-});
-mercy.listener().addEventListener('click', () => {
-	onClick(mercy, 'support');
-});
-moira.listener().addEventListener('click', () => {
-	onClick(moira, 'support');
-});
-zenyatta.listener().addEventListener('click', () => {
-	onClick(zenyatta, 'support');
 });
 supportSection.addEventListener('mouseleave', () => {
 	onLeaveSection('support');
 });
 
-//Random Character Image
+//------Random Character Image on Reload
+
 const randomPic = (arr, role) => {
 	const randomNum = Math.floor(Math.random() * arr.length);
 	const roles = document.querySelector(`.${role}`);
@@ -277,11 +213,9 @@ const randomPic = (arr, role) => {
 	roles.style.backgroundSize = 'cover';
 	roles.style.backgroundPosition = '50% 20%';
 };
-
 const tankArr = [...document.querySelectorAll('.tankchar')].map((e) => e.innerHTML);
 const damageArr = [...document.querySelectorAll('.damagechar')].map((e) => e.innerHTML);
 const supportArr = [...document.querySelectorAll('.supportchar')].map((e) => e.innerHTML);
-
 randomPic(tankArr, 'tank');
 randomPic(damageArr, 'damage');
 randomPic(supportArr, 'support');
